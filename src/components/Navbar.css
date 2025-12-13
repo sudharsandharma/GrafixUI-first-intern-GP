@@ -7,7 +7,7 @@
   color: white;
 }
 
-/* Left */
+/* Left section */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -23,14 +23,16 @@
   font-weight: bold;
 }
 
-/* Right */
+/* Right section */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-/* 🔑 MAKE LINKS CLICKABLE */
+/* 🔑 Make links clickable */
 .nav-link {
   display: flex;
   align-items: center;
@@ -38,11 +40,17 @@
   color: white;
   text-decoration: none;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
 }
 
-/* Active route */
+/* Active link highlight */
 .nav-link.active {
   border-bottom: 2px solid white;
   padding-bottom: 4px;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  opacity: 0.85;
 }
