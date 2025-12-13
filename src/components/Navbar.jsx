@@ -8,18 +8,15 @@ import {
 import "./Navbar.css";
 
 function Navbar() {
-  // 🔹 Dummy cart count (later we will make it dynamic)
+  // Dummy cart count (later we will make it dynamic)
   const cartCount = 0;
 
   return (
     <nav className="navbar">
-      {/* Left side */}
       <div className="navbar-left">
         <FaHamburger className="logo-icon" />
         <span className="logo-text">GrafixUI</span>
       </div>
-
-      {/* Right side */}
       <ul className="nav-links">
         <li>
           <NavLink to="/" end className="nav-link">
