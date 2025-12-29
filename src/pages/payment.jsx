@@ -10,8 +10,19 @@ function Payment() {
   );
 
   const handlePayment = () => {
-    alert("Payment successful ✅");
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    const newOrder = {
+      id: Date.now(),
+      items: cartItems,
+      total,
+      date: new Date().toLocaleString(),
+    };
+
+    localStorage.setItem("orders", JSON.stringify([...orders, newOrder]));
+
     clearCart();
+    alert("Payment successful 🎉");
   };
 
   return (
@@ -23,9 +34,7 @@ function Payment() {
       ) : (
         <>
           <p>Total Amount: ₹{total}</p>
-          <button onClick={handlePayment}>
-            Pay Now
-          </button>
+          <button onClick={handlePayment}>Pay Now</button>
         </>
       )}
     </div>

@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import "./Navbar.css";
+import { SearchContext } from "../context/SearchContext";
+
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+const { setSearchTerm } = React.useContext(SearchContext);
 
   return (
     <nav className="navbar">
@@ -16,7 +20,12 @@ const Navbar = () => {
       {/* Search Bar */}
       <div className="search-box">
         <FaSearch className="search-icon" />
-        <input type="text" placeholder="Search food..." />
+        <input
+  type="text"
+  placeholder="Search food..."
+  onChange={(e) => setSearchTerm(e.target.value)}
+/>
+
       </div>
 
       {/* Nav Links */}
@@ -30,6 +39,8 @@ const Navbar = () => {
         <li>
           <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart</Link>
         </li>
+        <li><Link to="/Orders" onClick={() => setMenuOpen(false)}>Orders</Link>
+        </li>
         <div className="auth-buttons">
   <Link to="/login" className="login-btn">
     Login
@@ -37,7 +48,10 @@ const Navbar = () => {
 
   <Link to="/signup" className="signup-btn">
     Sign Up
-  </Link>
+    </Link>
+  
+  
+
 </div>
       </ul>
 
