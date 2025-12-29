@@ -13,8 +13,8 @@ function App() {
   return (
     <BrowserRouter>
     <CartProvider>
+      <SearchProvider>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
@@ -23,6 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/payment" element={<Payment />} />
       </Routes>
+      </SearchProvider>
       </CartProvider>
     </BrowserRouter>
   );
