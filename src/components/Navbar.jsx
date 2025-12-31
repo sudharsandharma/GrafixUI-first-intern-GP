@@ -6,6 +6,7 @@ import { SearchContext } from "../context/SearchContext";
 
 
 
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 const { setSearchTerm } = React.useContext(SearchContext);

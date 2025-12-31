@@ -1,11 +1,85 @@
-.footer{
-    background-color: #ff4d4d; 
-    color: white; 
-    text-align: "center";
-    padding: "35px";
-    margin-top: "auto";
-
+.food-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
-.text{
-    padding: 10px;
-} 
+
+
+.offer {
+  background: #ff4d4d;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+
+.qty-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+
+.badge-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  color: white;
+}
+
+.badge.top {
+  background: #2ecc71;
+}
+
+.badge.fast {
+  background: #ff9800;
+}
+
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 6px 0;
+}
+
+.star {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.star.filled {
+  color: #ffb400;
+}
+
+
+.time {
+  font-size: 13px;
+  color: #555;
+}
+
+
+.add-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-btn:hover {
+  background: #e63939;
+}

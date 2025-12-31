@@ -1,0 +1,48 @@
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+}
+
+.rating-block {
+  margin: 15px 0;
+}
+
+.star {
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #ffb400;
+}
+
+.submit-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}

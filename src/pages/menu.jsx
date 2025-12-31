@@ -1,17 +1,6 @@
-import FoodItem from "../components/FoodItem";
-
-function Menu() {
-  return (
-    <div>
-      <h1>Menu</h1>
-      <hr />
-
-      <FoodItem name="Pizza" price={199} />
-      <FoodItem name="Burger" price={99} />
-      <FoodItem name="Biryani" price={249} />
 import React, { useContext } from "react";
 import FoodItem from "../components/FoodItem";
-import "./menu.css";
+import "./Menu.css";
 import { SearchContext } from "../context/SearchContext";
 
 function Menu() {
@@ -26,7 +15,7 @@ function Menu() {
       <p className="menu-subtitle">Fresh • Tasty • Affordable</p>
       <hr />
 
-      {/* Pizzas */}
+      {/* 🍕 Pizzas */}
       <h2 className="menu-category">🍕 Pizzas</h2>
       <div className="menu-list">
         {matches("Margherita Pizza") && (
@@ -43,7 +32,7 @@ function Menu() {
         )}
       </div>
 
-      {/* Burgers */}
+      {/* 🍔 Burgers */}
       <h2 className="menu-category">🍔 Burgers</h2>
       <div className="menu-list">
         {matches("Classic Veg Burger") && (
@@ -60,7 +49,7 @@ function Menu() {
         )}
       </div>
 
-      {/* Indian */}
+      {/* 🍛 Indian */}
       <h2 className="menu-category">🍛 Indian Specials</h2>
       <div className="menu-list">
         {matches("Veg Biryani") && (
@@ -77,7 +66,7 @@ function Menu() {
         )}
       </div>
 
-      {/* Snacks */}
+      {/* 🍟 Snacks */}
       <h2 className="menu-category">🍟 Snacks</h2>
       <div className="menu-list">
         {matches("French Fries") && (
@@ -94,7 +83,7 @@ function Menu() {
         )}
       </div>
 
-      {/* Drinks */}
+      {/* 🥤 Drinks */}
       <h2 className="menu-category">🥤 Drinks</h2>
       <div className="menu-list">
         {matches("Coke") && <FoodItem name="Coke" price={49} />}
