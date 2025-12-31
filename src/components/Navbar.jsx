@@ -4,6 +4,9 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import "./Navbar.css";
 import { SearchContext } from "../context/SearchContext";
 
+
+
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { setSearchTerm } = useContext(SearchContext);

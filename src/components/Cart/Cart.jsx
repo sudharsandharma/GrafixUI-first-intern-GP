@@ -36,11 +36,11 @@ function Cart() {
   const finalAmount = Math.max(totalPrice - discount, 0);
 
   return (
-    <div className="cart-page">
-      <h1 className="cart-title">Your Cart</h1>
+    <div className="cart-container">
+      <h2>Your Cart</h2>
 
       {cartItems.length === 0 ? (
-        <p className="cart-empty">Your cart is empty 🛒</p>
+        <p>Your cart is empty 🛒</p>
       ) : (
         <>
           <div className="cart-list">
@@ -101,6 +101,7 @@ function Cart() {
       )}
     </div>
   );
-}
+};
 
 export default Cart;
+
