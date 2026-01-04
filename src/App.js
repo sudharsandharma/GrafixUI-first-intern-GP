@@ -31,7 +31,7 @@ function App() {
       </Routes>
       </SearchProvider>
       </CartProvider>
-      <Footer />
+      <Footer/>
     </BrowserRouter>
   );
 }
