@@ -45,6 +45,8 @@ function Home() {
           <img src={banner1} className="img" alt="banner image"></img>
           
         </div>
+    <>
+    
     <div className="home-page">
       <h1 className="home-title">Restaurants Near You</h1>
 
@@ -84,7 +86,7 @@ function Home() {
       </div>
       <BestFoods />
     </div>
-  </>
+    </>
   );
 }
 

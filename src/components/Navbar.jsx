@@ -1,60 +1,47 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
-import "./Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { SearchContext } from "../context/SearchContext";
+import "./Navbar.css";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { setSearchTerm } = useContext(SearchContext);
+  const navigate = useNavigate();
 
-  const closeMenu = () => setMenuOpen(false);
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    navigate("/menu");
+  };
 
   return (
-    <nav className="navbar">
+    <nav className="z-navbar">
       {/* Logo */}
-      <div className="logo">
-        <Link to="/" onClick={closeMenu}>GrafixUI</Link>
+      <div className="z-logo">
+        <Link to="/">GrafixUI</Link>
       </div>
 
-      {/* Search bar (desktop only) */}
-      <div className="search-box">
-        <FaSearch className="search-icon" />
+      {/* Search */}
+      <div className="z-search">
+        <FaSearch className="z-search-icon" />
         <input
           type="text"
-          placeholder="Search food..."
-          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search for restaurant, cuisine or a dish"
+          onChange={handleSearch}
         />
       </div>
 
-      {/* Menu */}
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-        </li>
-        {/*<li>
-          <Link to="/menu" onClick={closeMenu}>Menu</Link>
-        </li>*/}
-        <li>
-          <Link to="/cart" onClick={closeMenu}>Cart</Link>
-        </li>
-        <li>
-          <Link to="/orders" onClick={closeMenu}>Orders</Link>
-        </li>
-
-        <div className="auth-buttons">
-          <Link to="/login" className="login-btn" onClick={closeMenu}>
-            Login
-          </Link>
-          <Link to="/signup" className="signup-btn" onClick={closeMenu}>
-            Sign Up
-          </Link>
-        </div>
-      </ul>
+      {/* Links */}
+      <div className={`z-links ${open ? "open" : ""}`}>
+        <Link to="/login" onClick={() => setOpen(false)}>Log in</Link>
+        <Link to="/signup" className="signup" onClick={() => setOpen(false)}>
+          Sign up
+        </Link>
+      </div>
 
       {/* Hamburger */}
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
+      <div className="z-hamburger" onClick={() => setOpen(!open)}>
+        {open ? <FaTimes /> : <FaBars />}
       </div>
     </nav>
   );
