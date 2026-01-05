@@ -42,7 +42,7 @@ function Home() {
   return (
   <>
         <div className="banner">
-          <img src={banner1} className="img"></img>
+          <img src={banner1} className="img" alt="banner image"></img>
           
         </div>
     <div className="home-page">
