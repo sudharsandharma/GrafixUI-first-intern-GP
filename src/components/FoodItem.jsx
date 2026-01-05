@@ -8,7 +8,7 @@ function FoodItem({ name, price, restaurant }) {
 
   const handleAdd = () => {
     addToCart({
-      id: Date.now(),
+      id: `${restaurant}-${name}`, // stable id
       name,
       price,
       quantity,
@@ -16,22 +16,24 @@ function FoodItem({ name, price, restaurant }) {
     });
   };
 
-
   return (
     <div className="food-card">
-      <h3>{name}</h3>
-      <p>₹{price}</p>
+      <div className="food-info">
+        <h4 className="food-name">{name}</h4>
+        <p className="food-price">₹{price}</p>
+      </div>
 
-      <div>
-        <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
+      <div className="quantity-controls">
+        <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>−</button>
         <span>{quantity}</span>
         <button onClick={() => setQuantity(quantity + 1)}>+</button>
       </div>
 
-      <button onClick={handleAdd}>Add to Cart</button>
+      <button className="add-cart-btn" onClick={handleAdd}>
+        Add to Cart
+      </button>
     </div>
   );
 }
 
 export default FoodItem;
-

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import FoodItem from "../components/FoodItem";
 import { restaurants } from "../Data/restaurantsData";
+import "./Restaurant.css"; // 👈 ADD THIS
 
 function Restaurant() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Restaurant() {
   }, [restaurant]);
 
   if (!restaurant) {
-    return <p>No menu available</p>;
+    return <p className="menu-empty">No menu available</p>;
   }
 
   return (
@@ -22,8 +23,13 @@ function Restaurant() {
       <h1 className="menu-title">{restaurant.name}</h1>
 
       <div className="menu-list">
-        {restaurant.menu.map((item, i) => (
-          <FoodItem key={i} name={item.name} price={item.price} />
+        {restaurant.menu.map((item) => (
+          <FoodItem
+            key={item.name}
+            name={item.name}
+            price={item.price}
+            restaurant={restaurant.name}
+          />
         ))}
       </div>
     </div>
@@ -31,4 +37,3 @@ function Restaurant() {
 }
 
 export default Restaurant;
-
