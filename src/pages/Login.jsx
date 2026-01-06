@@ -29,7 +29,7 @@ const Login = () => {
         <div className="phone-box">
           <span className="country-code">🇮🇳 +91</span>
           <input
-            type="tel"
+            type="number"
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}

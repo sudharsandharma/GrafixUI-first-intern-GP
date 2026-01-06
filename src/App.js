@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SearchResults from "./pages/SearchResults";  
 
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -31,6 +32,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/search" element={<SearchResults />} />
+
           </Routes>
 
           <Footer />

@@ -38,6 +38,12 @@ function Cart() {
   return (
     <div className="cart-page">
       <h1 className="cart-title">Your Cart</h1>
+      {/* COUPON INFO BANNER */}
+      <div className="coupon-info">
+        🎉 Use <strong>SAVE50</strong> (₹50 OFF) or <strong>FIRST10</strong> (10% OFF)
+        on all food items!
+      </div>
+
 
       {cartItems.length === 0 ? (
         <p className="cart-empty">Your cart is empty 🛒</p>
@@ -67,10 +73,11 @@ function Cart() {
           <div className="coupon-container">
             <input
               type="text"
-              placeholder="Enter coupon code"
+              placeholder="Enter coupon code (SAVE50 / FIRST10)"
               value={coupon}
               onChange={(e) => setCoupon(e.target.value.toUpperCase())}
             />
+
             <button onClick={applyCoupon}>Apply</button>
           </div>
 
