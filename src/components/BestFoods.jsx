@@ -10,15 +10,15 @@ function BestFoods() {
             <br></br>
             <div className="smallBox">
                 <div className="box1">
-                  <img src={pizza} className="img1"></img>
+                  <img src={pizza} className="img1" alt="Popular food item 1"  ></img>
                   <h3>Pizza</h3>
                 </div>
                 <div className="box2">
-                   <img src={image} className="img2"></img>
+                   <img src={image} className="img2"  alt="Popular food item 2"></img>
                    <h3>Biriyani</h3>
                 </div>
                 <div className="box3">
-                   <img src={chicken} className="img3"></img>
+                   <img src={chicken} className="img3"  alt="Popular food item 3"></img>
                    <h3>Fried Chicken</h3>
             </div>
         </div>
