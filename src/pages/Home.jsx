@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import BestFoods from "../components/BestFoods.jsx";
+import banner1 from "./banner1.jpg";
 
 const featuredRestaurants = [
   {
@@ -40,7 +41,10 @@ const allRestaurants = [
 function Home() {
   return (
     <>
-    
+        <div className="banner">
+          <img src={banner1} className="img" alt="banner-image"></img>
+          
+        </div>
     <div className="home-page">
       <h1 className="home-title">Restaurants Near You</h1>
 
